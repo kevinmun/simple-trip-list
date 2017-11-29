@@ -1,4 +1,10 @@
 {
   "name": "RNScaffold",
-  "displayName": "RNScaffold"
+  "displayName": "RNScaffold",
+  "expo": {
+    "slug": "RNScaffold",
+    "name": "RNScaffold",
+    "sdkVersion": "23.0.0",
+    "entryPoint": "/Users/kevinmun/Projects/RNScaffold/.vscode/exponentIndex.js"
+  }
 }
