@@ -7,9 +7,22 @@
 		"import"
 	],
 	"rules": {
-	  "react/jsx-filename-extension":["error", {"extensions":[".js", ".jsx"]}],
-	  "no-use-before-define": 0,       // disallow use of variables before they are defined
-	
+		"react/jsx-filename-extension": [
+			"error",
+			{
+				"extensions": [
+					".js",
+					".jsx"
+				]
+			}
+		],
+		"react/prefer-stateless-function": [
+			2,
+			{
+				"ignorePureComponents": true
+			}
+		],
+		"no-use-before-define": 0, // disallow use of variables before they are defined
+		"no-underscore-dangle": 0,
 	}
-
 }

@@ -51876,7 +51876,7 @@ var _HomeScreen = require(554                           ); // 554 = ../src/compo
 
 var _HomeScreen2 = _interopRequireDefault(_HomeScreen);
 
-var _ProfileScreen = require(555                              ); // 555 = ../src/components/ProfileScreen
+var _ProfileScreen = require(557                              ); // 557 = ../src/components/ProfileScreen
 
 var _ProfileScreen2 = _interopRequireDefault(_ProfileScreen);
 
@@ -61311,6 +61311,10 @@ var _class,
 
 var _reactNative = require(12            ); // 12 = react-native
 
+var _TripFlatList = require(555             ); // 555 = ./TripFlatList
+
+var _TripFlatList2 = _interopRequireDefault(_TripFlatList);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -61338,11 +61342,6 @@ function _wrapComponent(id) {
   };
 }
 
-var instructions = _reactNative.Platform.select({
-  ios: 'Home Screen Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' + 'Shake or press menu button for dev menu'
-});
-
 var App = _wrapComponent('App')((_temp = _class = function (_Component) {
   _inherits(App, _Component);
 
@@ -61362,36 +61361,15 @@ var App = _wrapComponent('App')((_temp = _class = function (_Component) {
         _reactNative.View,
         { style: styles.container, __source: {
             fileName: _jsxFileName,
-            lineNumber: 33
+            lineNumber: 26
           }
         },
-        _react3.default.createElement(
-          _reactNative.Text,
-          { style: styles.welcome, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 34
-            }
-          },
-          'Welcome to React Native!'
-        ),
-        _react3.default.createElement(
-          _reactNative.Text,
-          { style: styles.instructions, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 37
-            }
-          },
-          'To get started, edit App.js'
-        ),
-        _react3.default.createElement(
-          _reactNative.Text,
-          { style: styles.instructions, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 40
-            }
-          },
-          instructions
-        )
+        _react3.default.createElement(_TripFlatList2.default, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27
+          }
+        })
       );
     }
   }]);
@@ -61408,21 +61386,218 @@ var styles = _reactNative.StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'stretch',
     backgroundColor: '#F5FCFF'
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5
   }
 });
 }, 554, null, "RNScaffold/src/components/HomeScreen.js");
+__d(/* RNScaffold/src/components/TripFlatList.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react2 = require(35     ); // 35 = react
+
+var _react3 = _interopRequireDefault(_react2);
+
+var _index = require(127                                                    ); // 127 = ./../../node_modules/react-transform-hmr/lib/index.js
+
+var _index2 = _interopRequireDefault(_index);
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _class,
+    _temp2,
+    _jsxFileName = '/Users/kevinmun/Projects/RNScaffold/src/components/TripFlatList.js';
+
+var _propTypes = require(291         ); // 291 = prop-types
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _TripListItem = require(556             ); // 556 = ./TripListItem
+
+var _TripListItem2 = _interopRequireDefault(_TripListItem);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _components = {
+  TripFlatList: {
+    displayName: 'TripFlatList'
+  }
+};
+
+var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+  filename: '/Users/kevinmun/Projects/RNScaffold/src/components/TripFlatList.js',
+  components: _components,
+  locals: [module],
+  imports: [_react3.default]
+});
+
+function _wrapComponent(id) {
+  return function (Component) {
+    return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+  };
+}
+
+var TripFlatList = _wrapComponent('TripFlatList')((_temp2 = _class = function (_PureComponent) {
+  _inherits(TripFlatList, _PureComponent);
+
+  function TripFlatList() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, TripFlatList);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = TripFlatList.__proto__ || Object.getPrototypeOf(TripFlatList)).call.apply(_ref, [this].concat(args))), _this), _this._keyExtrator = function (item) {
+      return item.id;
+    }, _this._renderItem = function (_ref2) {
+      var item = _ref2.item;
+      return _react3.default.createElement(_TripListItem2.default, {
+        data: item,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20
+        }
+      });
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(TripFlatList, [{
+    key: 'render',
+    value: function render() {
+      return _react3.default.createElement(_reactNative.FlatList, {
+        data: this.props.data,
+        keyExtractor: this._keyExtrator,
+        renderItem: this._renderItem,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
+        }
+      });
+    }
+  }]);
+
+  return TripFlatList;
+}(_react2.PureComponent), _class.propTypes = {
+  data: _propTypes.PropTypes.array }, _class.defaultProps = {
+  data: [{ id: 1, text: 'Hello' }, { id: 2, text: 'Hello2' }, { id: 3, text: 'Hello3' }]
+}, _temp2));
+
+exports.default = TripFlatList;
+}, 555, null, "RNScaffold/src/components/TripFlatList.js");
+__d(/* RNScaffold/src/components/TripListItem.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react2 = require(35     ); // 35 = react
+
+var _react3 = _interopRequireDefault(_react2);
+
+var _index = require(127                                                    ); // 127 = ./../../node_modules/react-transform-hmr/lib/index.js
+
+var _index2 = _interopRequireDefault(_index);
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _class,
+    _temp,
+    _jsxFileName = '/Users/kevinmun/Projects/RNScaffold/src/components/TripListItem.js';
+
+var _propTypes = require(291         ); // 291 = prop-types
+
+var _reactNative = require(12            ); // 12 = react-native
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _components = {
+  TripListItem: {
+    displayName: 'TripListItem'
+  }
+};
+
+var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+  filename: '/Users/kevinmun/Projects/RNScaffold/src/components/TripListItem.js',
+  components: _components,
+  locals: [module],
+  imports: [_react3.default]
+});
+
+function _wrapComponent(id) {
+  return function (Component) {
+    return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+  };
+}
+
+var TripListItem = _wrapComponent('TripListItem')((_temp = _class = function (_PureComponent) {
+  _inherits(TripListItem, _PureComponent);
+
+  function TripListItem() {
+    _classCallCheck(this, TripListItem);
+
+    return _possibleConstructorReturn(this, (TripListItem.__proto__ || Object.getPrototypeOf(TripListItem)).apply(this, arguments));
+  }
+
+  _createClass(TripListItem, [{
+    key: 'render',
+    value: function render() {
+      var data = this.props.data;
+
+      return _react3.default.createElement(
+        _reactNative.View,
+        { style: styles.container, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22
+          }
+        },
+        _react3.default.createElement(
+          _reactNative.Text,
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 22
+            }
+          },
+          data.text
+        )
+      );
+    }
+  }]);
+
+  return TripListItem;
+}(_react2.PureComponent), _class.propTypes = {
+  data: _propTypes.PropTypes.object }, _class.defaultProps = {
+  data: {
+    text: 'Empty'
+  }
+}, _temp));
+
+exports.default = TripListItem;
+
+
+var styles = _reactNative.StyleSheet.create({
+  container: {
+    height: 200,
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
+});
+}, 556, null, "RNScaffold/src/components/TripListItem.js");
 __d(/* RNScaffold/src/components/ProfileScreen.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -61554,7 +61729,7 @@ var styles = _reactNative.StyleSheet.create({
     marginBottom: 5
   }
 });
-}, 555, null, "RNScaffold/src/components/ProfileScreen.js");
+}, 557, null, "RNScaffold/src/components/ProfileScreen.js");
 ;require(50);
 ;require(0);
 //# sourceMappingURL=index.map
