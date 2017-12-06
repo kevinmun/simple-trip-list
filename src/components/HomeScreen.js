@@ -15,7 +15,7 @@ import TripFlatList from './TripFlatList';
 
 function mapStateToProps(state) {
   return {
-    data: state,
+    data: state.trips,
   };
 }
 
