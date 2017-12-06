@@ -1,6 +1,6 @@
-import { AddTrip } from '../actions/TripActions'
+import { AddTrip } from '../actions/TripActions';
 
-const INITIAL_STATE = [];
+const INITIAL_STATE = [{ id: 1, text: 'Hello1' }, { id: 2, text: 'Hello2' }, { id: 3, text: 'Hello3' }];
 
 
 function trips(state = INITIAL_STATE, action) {
@@ -15,4 +15,4 @@ function trips(state = INITIAL_STATE, action) {
   }
 }
 
-export default { trips };
+export default trips;

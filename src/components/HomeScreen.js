@@ -5,6 +5,7 @@
  */
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {
   StyleSheet,
   View,
@@ -12,7 +13,14 @@ import {
 import TripFlatList from './TripFlatList';
 
 
-export default class App extends Component<{}> {
+function mapStateToProps(state) {
+  return {
+    data: state,
+  };
+}
+
+
+class App extends Component<{}> {
   static navigationOptions = {
     tabBarLabel: 'Home',
   };
@@ -24,7 +32,7 @@ export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <TripFlatList />
+        <TripFlatList data={this.props.data} />
       </View>
     );
   }
@@ -38,3 +46,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
 });
+
+export default connect(mapStateToProps)(App);

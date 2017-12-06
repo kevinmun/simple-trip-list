@@ -11,7 +11,7 @@ export default class TripFlatList extends PureComponent {
   };
 
   static defaultProps = {
-    data: [{ id: 1, text: 'Hello' }, { id: 2, text: 'Hello2' }, { id: 3, text: 'Hello3' }],
+    data: [],
   };
 
   _keyExtrator = item => item.id;
