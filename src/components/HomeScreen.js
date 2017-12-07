@@ -19,8 +19,11 @@ function mapStateToProps(state) {
   };
 }
 
+type Props = {
+  data: any
+};
 
-class App extends Component<{}> {
+class HomeScreen extends Component<Props> {
   static navigationOptions = {
     tabBarLabel: 'Home',
   };
@@ -47,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(HomeScreen);
