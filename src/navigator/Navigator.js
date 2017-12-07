@@ -5,7 +5,7 @@ import {
 } from 'react-navigation';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import HomeScreen from '../components/HomeScreen';
+import HomeScreen from '../components/HomeContainer';
 import ProfileScreen from '../components/ProfileScreen';
 
 export const Navigator = TabNavigator({
