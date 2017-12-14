@@ -5,6 +5,7 @@
  */
 
 import { connect } from 'react-redux';
+import { fetchTrips } from '../actions/TripActions';
 import HomeScreen from './HomeScreen';
 
 
@@ -14,4 +15,12 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(HomeScreen);
+function mapDispatchToProps(dispatch) {
+  return {
+    fetchTrips: () => {
+      dispatch(fetchTrips());
+    },
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);

@@ -1,14 +1,14 @@
-import { AddTrip } from '../actions/TripActions';
+import { AddTrips } from '../actions/TripActions';
 
-const INITIAL_STATE = [{ id: 1, text: 'Hello1' }, { id: 2, text: 'Hello2' }, { id: 3, text: 'Hello3' }];
+const INITIAL_STATE = [];
 
 
 function trips(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case AddTrip:
+    case AddTrips:
       return [
         ...state,
-        action.trip,
+        ...action.trips,
       ];
     default:
       return state;

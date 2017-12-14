@@ -13,7 +13,8 @@ import TripFlatList from './TripFlatList';
 
 
 type Props = {
-  data: any
+  data: any,
+  fetchTrips: any,
 };
 
 export default class HomeScreen extends Component<Props> {
@@ -21,8 +22,8 @@ export default class HomeScreen extends Component<Props> {
     tabBarLabel: 'Home',
   };
 
-  componentWillMount() {
-
+  componentDidMount() {
+    this.props.fetchTrips();
   }
 
   render() {

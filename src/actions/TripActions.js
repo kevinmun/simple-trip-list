@@ -1,10 +1,21 @@
-const AddTrip = 'ADD_TRIP';
+import firebase from '../Firebase';
 
-function addTrip(trip) {
+export const AddTrips = 'ADD_TRIPS';
+export function addTrips(trips) {
   return {
-    type: AddTrip,
-    trip,
+    type: AddTrips,
+    trips,
   };
 }
 
-export default { AddTrip, addTrip };
+export const fetchTrips = () => (dispatch) => {
+  firebase.database()
+    .ref('rnscaffold/trips')
+    .once('value', (snapshot) => {
+      const trips = Object.values(snapshot.val()) || [];
+      dispatch(addTrips(trips));
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
