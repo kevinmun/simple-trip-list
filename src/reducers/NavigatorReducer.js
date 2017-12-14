@@ -1,15 +1,17 @@
 import { NavigationActions } from 'react-navigation';
 import { Navigator } from '../navigator/Navigator';
 
-const firstAction = Navigator.router.getActionForPathAndParams('Home');
-const initialState = Navigator.router.getStateForAction(firstAction);
+const initialRoute = 'Main';
+const initialState = Navigator.router.getStateForAction(NavigationActions.navigate({
+  routeName: initialRoute,
+}));
 
 function nav(state = initialState, action) {
   let nextState;
   switch (action.routeName) {
-    case 'Home':
+    case 'Main':
       nextState = Navigator.router.getStateForAction(
-        NavigationActions.navigate({ routeName: 'Home' }),
+        NavigationActions.navigate({ routeName: 'Main' }),
         state,
       );
       break;

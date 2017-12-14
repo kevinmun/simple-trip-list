@@ -8,6 +8,8 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
+  Text,
+  TouchableOpacity,
 } from 'react-native';
 import TripFlatList from './TripFlatList';
 
@@ -20,6 +22,11 @@ type Props = {
 export default class HomeScreen extends Component<Props> {
   static navigationOptions = {
     tabBarLabel: 'Home',
+    headerRight: (
+      <TouchableOpacity>
+        <Text>Add</Text>
+      </TouchableOpacity>
+    ),
   };
 
   componentDidMount() {

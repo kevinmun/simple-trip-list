@@ -1,12 +1,13 @@
 import firebase from '../Firebase';
 
 export const AddTrips = 'ADD_TRIPS';
-export function addTrips(trips) {
+export const addTrips = (trips) => {
   return {
     type: AddTrips,
     trips,
   };
-}
+};
+
 
 export const fetchTrips = () => (dispatch) => {
   firebase.database()

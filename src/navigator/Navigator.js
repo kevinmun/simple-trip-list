@@ -2,14 +2,20 @@ import React from 'react';
 import {
   TabNavigator,
   addNavigationHelpers,
+  StackNavigator,
 } from 'react-navigation';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import HomeScreen from '../components/HomeContainer';
 import ProfileScreen from '../components/ProfileScreen';
 
-export const Navigator = TabNavigator({
+
+const MainStack = StackNavigator({
   Home: { screen: HomeScreen, path: 'Home' },
+});
+
+export const Navigator = TabNavigator({
+  Main: { screen: MainStack, path: 'Main' },
   Profile: { screen: ProfileScreen, path: 'Profile' },
 });
 
