@@ -10,6 +10,7 @@ import {
   View,
   Text,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 import TripFlatList from './TripFlatList';
 
@@ -19,14 +20,23 @@ type Props = {
   fetchTrips: any,
 };
 
-export default class HomeScreen extends Component<Props> {
-  static navigationOptions = {
-    tabBarLabel: 'Home',
+const header = Platform.select({
+  android: {
+    header: null,
+  },
+  ios: {
     headerRight: (
       <TouchableOpacity>
         <Text>Add</Text>
       </TouchableOpacity>
     ),
+  },
+});
+
+export default class HomeScreen extends Component<Props> {
+  static navigationOptions = {
+    tabBarLabel: 'Home',
+    ...header,
   };
 
   componentDidMount() {
